@@ -1,7 +1,0 @@
-import math
-
-start = 15
-end = 195
-
-for num in range(start, end, 15):
-	print("Sin", num,":", math.sin(math.radians(num)),"Cos", num, ":", math.cos(math.radians(n)), "Tan", num, ":", math.tan(math.radians(n)))

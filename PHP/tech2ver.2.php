@@ -17,9 +17,9 @@ if(isset($_POST['back'])){
 <h2>計算結果</h2>
 
 <?php
-//クラスFruitsの作成
-class Fruits{
-    public $fruits = [];
+//クラスFruitの作成
+class Fruit{
+    public $fruit = [];
 
     //コンストラクタ
     public function __construct($name, $min, $max, $count)
@@ -27,20 +27,20 @@ class Fruits{
         //ランダムな価格の抽出
         for ( $i = 0; $i < $count; $i++ ) {
             $price = rand($min, $max);
-            $this->fruits[] = $price;    
+            $this->fruit[] = $price;    
         }
         //結果の表示
-        echo $name."の最高値".max($this->fruits)."円";
+        echo $name."の最高値".max($this->fruit)."円";
         echo"<br>";
-        echo $name."の最安値".min($this->fruits)."円";
+        echo $name."の最安値".min($this->fruit)."円";
         echo"<br>"; 
-        echo $name."の平均価格".array_sum( $this->fruits)/ count($this->fruits)."円\n";
+        echo $name."の平均価格".array_sum( $this->fruit)/ count($this->fruit)."円\n";
         echo"<br>";
     }
 }
 
 //桃の数値設定
-class Peach extends Fruits{
+class Peach extends Fruit{
     public function __construct($count)
     {
          parent::__construct("桃", 200, 300, $count);    
@@ -48,7 +48,7 @@ class Peach extends Fruits{
 }
 
 //イチゴの数値設定
-class Strawberry extends Fruits{
+class Strawberry extends Fruit{
     public function __construct($count)
     {
          parent::__construct("イチゴ", 400, 500, $count);    
